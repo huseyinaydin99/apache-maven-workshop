@@ -1,0 +1,50 @@
+Java derleme süreci, yazdığın .java dosyasının derlenip çalıştırılabilir hale gelmesinin ardından, bu dosyaların paketlenmesiyle devam eder. İlk olarak, javac komutu ile yazdığın kaynak kodları .class dosyasına dönüştürülür. Bu dosyalar bytecode içerir ve JVM tarafından çalıştırılabilir. Ardından, eğer projen birden fazla sınıf içeriyorsa, bu .class dosyaları bir araya getirilip dağıtıma hazır hale getirilir. Bunun için jar komutu kullanılarak, tüm sınıflar ve gerekli kaynaklar bir araya getirilip tek bir dosya haline getirilir. Bu .jar dosyası, Java uygulamasını taşınabilir ve paylaşılabilir yapar, böylece başka makinelerde çalıştırılabilir. Paketleme süreci, tüm uygulamanın düzgün çalışması için gerekli dosyaların bir araya getirilmesini sağlar.
+javac Main.java //Bu komut, yazdığın Java kodunu derler ve Main.class adında bir dosya oluşturur. Bu dosya, Java'nın çalıştırabileceği bytecode'u içeriyor. Şimdi, bu .class dosyasını tek bir dosyada toplamak için .jar dosyasına dönüştürmemiz gerekiyor.
+jar cfe MyProgram.jar Main Main.class 
+/*
+c yeni bir .jar dosyası oluşturduğunu söylüyor.
+f dosyayı MyProgram.jar adıyla kaydedeceğini belirtiyor.
+e ise bu .jar dosyasının çalıştırılabilir dosya olabilmesi için giriş sınıfını, yani Main sınıfını işaret ediyor.
+Son olarak, Main.class ise paketlenecek dosya.
+*/
+MyProgram.jar dosyasını çalıştırmak için şu komutu kullanabilirsin: java -jar MyProgram.jar
+
+Derleme sürecini çizen python kodum:
+import matplotlib.pyplot as plt
+import networkx as nx
+
+# Şema oluşturmak için bir yönlendirilmiş graf
+G = nx.DiGraph()
+
+# Adımları ve açıklamaları ekle
+steps = [
+    ("İnsan tarafında yazılan kod dosyası (.java) uzantılı.", "Kod yazılır ve .java uzantılı dosya haline gelir."),
+    ("Derleme (javac) yani Java derleyicisi.", "javac komutu ile .java dosyası derlenir. javac Main.java"),
+    ("Bytecode (.class)", "Derlenen kod .class dosyasına dönüştürülür."),
+    ("Çalıştırma (JVM/Java Sanal Makinası)", "JVM, .class dosyasını çalıştırabilir."),
+    ("Paketleme (jar) jar cfe MyProgram.jar Main Main.class", "Derlenen .class dosyaları jar dosyasına paketlenir."),
+    ("c yeni bir .jar dosyası oluşturduğunu söylüyor.\n"
+     "f dosyayı MyProgram.jar adıyla kaydedeceğini belirtiyor.\n"
+     "e ise bu .jar dosyasının çalıştırılabilir dosya olabilmesi için giriş sınıfını, yani Main sınıfını işaret ediyor.\n"
+     "Son olarak, Main.class ise paketlenecek dosya.", "Paketleme: jar cfe MyProgram.jar Main Main.class"),
+    ("Çalıştırma (JVM)", "JVM, .jar dosyasını çalıştırabilir."),
+]
+
+# Grafiğe adımları ve açıklamaları ekle
+for i, (start, description) in enumerate(steps):
+    G.add_node(i, label=start)
+    if i > 0:
+        G.add_edge(i-1, i, label=description)
+
+# Şemayı çiz
+pos = nx.spring_layout(G, k=2.0)  # Düğümler arası mesafeyi artır
+plt.figure(figsize=(12, 8))  # Grafik boyutunu büyüt
+nx.draw(G, pos, with_labels=True, node_size=3000, node_color='skyblue', font_size=9, font_weight='bold', edge_color='gray')
+edge_labels = nx.get_edge_attributes(G, 'label')
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8, font_color='black')
+
+# Başlık ve gösterim
+plt.title("Java Derleme ve Paketleme Süreci - Algoritma Hüseyin AYDIN tarafından yazılmıştır. TR TR TR TR TR (:", fontsize=12)
+plt.axis('off')  # Eksenleri kapat
+plt.tight_layout()  # Grafiği sıkıştırarak daha iyi sığdır
+plt.show()
