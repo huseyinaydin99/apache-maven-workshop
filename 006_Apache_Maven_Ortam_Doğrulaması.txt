@@ -1,0 +1,6 @@
+🔹 java --version: Kurulu Java sürümünü gösterir. ☕️
+🔹 javac --version: Java derleyicisinin sürümünü öğrenmeni sağlar. 📤
+🔹 mvn -version: Maven’in kurulu olduğu klasör yolunu ve sürümünü gösterir. 📦
+🔹 echo $JAVA_HOME (Linux/Mac) / echo %JAVA_HOME% (Windows): JAVA_HOME ortam değişkeninin yolunu gösterir. 🛠️
+🔹 which java (Linux/Mac): Java’nın kurulu olduğu dizini gösterir. 🔍
+🔹 which mvn (Linux/Mac): Maven’in kurulu olduğu dizini gösterir. 🔍
