@@ -1,0 +1,30 @@
+mvn --version
+mvn clean
+mvn package
+
+mvn --version
+Bu komutla Maven'ın yüklü olup olmadığını kontrol ettim ve hangi sürümde olduğunu öğrendim. 🧐 Yani, proje üzerinde doğru sürümle çalışıp çalışmadığımı anlamak için kullanışlı. 🔍 Sonuçta Maven'ı düzgün kullanabilmek için doğru sürümü bilmek önemli!
+
+mvn clean
+Bu komut, proje dizinindeki önceki derleme dosyalarını temizler. 🧹 Yani, eski derlemelerden kaynaklanabilecek sorunları ortadan kaldırdım. 🔥 Böylece her şey sıfırdan derlendi ve temiz bir başlangıç yapıldı!
+
+mvn package
+Bu komutla projemi paketledim, yani uygulamamı JAR veya WAR dosyasına dönüştürdüm. 📦 Proje derlendi, bağımlılıklar eklendi ve son halini alarak dağıtıma hazır hale geldi! 🚀 Artık bu dosyayı başka sistemlerde çalıştırmak çok kolay!
+
+mkdir src
+Bu komutla projede src adında bir klasör oluşturup, kaynak dosyalarımı buraya koymaya karar verdim. 📂 Yeni bir proje başlattım, düzenli bir yapı kurmak için bu klasörün olması gerekliydi. 🔥 Kendi projeme daha derli toplu bir başlangıç yaptım!
+
+mkdir src/main
+Sonrasında src klasörü içinde main adında bir alt klasör daha oluşturduğumda, proje yapısının daha mantıklı olacağını düşündüm. 🧑‍💻 Bu klasör genellikle ana kaynak kodlarımızı barındırmak için kullanılır. 📦 Artık projede hangi klasörde ne olduğunu kolayca bulabileceğim!
+
+mkdir src/main/java
+İçinde Java kaynak kodlarımı tutacağım java klasörünü de oluşturdum. 💻 Bu klasör sayesinde projedeki tüm Java dosyalarım düzenli bir şekilde yerleşecek. 🚀 Kendi Java projeme profesyonel bir yapı kazandırdım!
+
+mvn clean package
+Bu komutla projeyi derledim ve eski derleme dosyalarını temizledim. 🧹 mvn clean, önceki hatalardan arınmak için temiz bir başlangıç yapmamı sağladı. 📦 Sonrasında mvn package ile projemi paketleyip dağıtıma hazır hale getirdim!
+
+mkdir src
+mkdir src/main
+mkdir src/main/java
+
+mvn clean package
