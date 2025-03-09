@@ -1,0 +1,11 @@
+JAR (Java Archive): 📦
+JAR dosyası, Java uygulamalarını paketlemek için kullanılan arşiv dosyasıdır. İçinde tüm .class dosyaları ve uygulama için gerekli kaynaklar bulunur, böylece taşınabilir ve kolayca dağıtılabilir! 🚀
+
+WAR (Web Archive): 🌐
+WAR dosyası, Java web uygulamalarını bir arada tutan paketlerdir. Bir web sunucusunda çalışacak şekilde yapılandırılmıştır ve içinde HTML, CSS, JSP ve diğer web bileşenleri bulunur. 🌍
+
+EAR (Enterprise Archive): 🏢
+EAR dosyası, büyük ölçekli Java uygulamaları için kullanılan bir paketleme formatıdır. Genellikle birden fazla WAR ve JAR dosyasını birleştirip, kurumsal çözümler için ideal hale getirir! 💼
+
+Fat JAR(şişko jar aynı ben (:): 💣
+Fat JAR, tüm bağımlılıklarıyla birlikte tek bir JAR dosyasına paketlenmiş bir uygulamadır. Böylece dışa bağımlılıkları ortadan kaldırarak her ortamda kolayca çalıştırılabilir! 🔥
