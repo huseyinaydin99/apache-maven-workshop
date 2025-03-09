@@ -1,0 +1,9 @@
+Kodu Derleme
+javac HelloWorld.java komutu, Java derleyicisini (Java Compiler) kullanarak HelloWorld.java dosyasını derler ve HelloWorld.class adlı bytecode dosyasını oluşturur. 🚀 Bu bytecode, Java Virtual Machine (JVM) tarafından çalıştırılabilir! 💻🔥
+javac HelloWorld.java
+
+ls veya dir ile listele klasörü
+
+Derlenen Byte Kodunu Çalıştırma
+java HelloWorld komutu, derlediğimiz HelloWorld.class dosyasını JVM üzerinde çalıştırır. 🚀 Yani kodumuz artık makine diline çevrilmiş ve çalışmaya hazır hale gelmiştir! 💻🔥
+java HelloWorld

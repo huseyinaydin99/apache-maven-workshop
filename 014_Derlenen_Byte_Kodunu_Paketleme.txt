@@ -1,0 +1,21 @@
+jar cf myjar.jar HelloWorld.class komutu, HelloWorld.class dosyasını kullanarak myjar.jar adında bir JAR arşivi oluşturur. 📦💻 Buradaki c yeni bir JAR oluşturduğumuzu, f ise çıkış dosyasının adını belirttiğimizi gösterir. 🔥 Böylece tüm dosyaları tek bir arşiv içinde paketleyip taşınabilir hale getiririz! 🚀 Artık bu JAR dosyasını başka sistemlerde de kolayca çalıştırabiliriz! 🌍
+jar cf myjar.jar HelloWorld.class
+
+ls veya dir ile listele
+
+java -classpath myjar.jar HelloWorld komutu, myjar.jar içindeki HelloWorld sınıfını çalıştırır. 🚀 -classpath (veya -cp) ifadesi, Java'ya kodu nerede araması gerektiğini söyler. 📂 Eğer JAR dosyasında HelloWorld.class varsa, Java bunu bulup çalıştırır. 💻 Yani paketlediğimiz uygulamayı JAR içinden çalıştırmış oluruz! 🔥
+java -classpath myjar.jar HelloWorld
+
+unzip myjar.jar komutu, myjar.jar dosyasının içindeki tüm dosyaları çıkartır. 📦➡️📂 Böylece JAR içinde hangi dosyalar olduğunu görebilir ve gerektiğinde kullanabiliriz. 🔍 Eğer JAR içinde HelloWorld.class veya başka kaynak dosyaları varsa, bunlar bulunduğumuz dizine açılır. 💻🔥 Kısacası, JAR dosyasını açıp içeriğini keşfetmemizi sağlar! 🚀
+unzip myjar.jar
+ls veya dir
+
+javac -classpath ./lib/* HelloWorld.java komutu, HelloWorld.java dosyasını derlerken ./lib/ klasöründeki tüm JAR dosyalarını kullanır. 📦📂 -classpath (veya -cp) parametresi, Java'ya harici kütüphanelerin nerede olduğunu söyler. 🔍 Eğer HelloWorld.java içinde başka JAR dosyalarına bağımlı kodlar varsa, derleme sırasında hata almamak için bu kütüphaneler kullanılır. 💻✅ Sonuç olarak, uygulamamızı harici kütüphanelerle birlikte derlemiş oluruz! 🚀🔥
+javac -classpath ./lib/* HelloWorld.java
+
+java -classpath ./lib/*:./ HelloWorld komutu, ./lib/ klasöründeki tüm JAR dosyalarını ve geçerli dizini (./) sınıf yoluna ekler. 📂📦 Bu, HelloWorld sınıfını çalıştırmak için gerekli bağımlılıkları bulabilmesini sağlar. 🔍 Eğer projende harici kütüphaneler veya ek dosyalar varsa, bu komut onlara erişim sağlar. 💻🚀 Yani hem kendi sınıf dosyanı hem de kütüphaneleri doğru şekilde kullanarak HelloWorld'ü çalıştırmış olursun! 🔥
+win:
+java -classpath "./lib/*;." HelloWorld
+macos | linux:
+java -classpath ./lib/*:./ HelloWorld
+
