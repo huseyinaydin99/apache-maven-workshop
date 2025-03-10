@@ -1,0 +1,5 @@
+Maven Dependency aslında bir projeye eklediğin bağımlılıklardır. 📦 Yani, bir projede kullanılan başka kütüphaneleri, araçları veya bileşenleri tanımlar. Mesela, JUnit veya Spring Framework gibi dış kütüphaneleri projene dahil ediyorsan, bu bir dependency eklemektir! 🔥
+
+Transitive Dependency ise, bir bağımlılığın da bağımlılıkları olduğu durumdur! 🧩 Yani, sen direkt olarak bir kütüphaneyi projene dahil ettiğinde, o kütüphanenin başka bağımlılıkları varsa, o bağımlılıklar da otomatik olarak projene eklenir. 🚀 Bu sayede her şey otomatik ve sorunsuz çalışır.
+
+Son olarak, Dependency Management kısmı ise, tüm bağımlılıklarını düzenli ve uyumlu bir şekilde yönetmeni sağlar. 🛠️ POM dosyana eklediğin bağımlılıkların sürümleriyle ilgili çakışmalar varsa, bu yönetim hangi sürümün kullanılacağını belirler. 📊 Yani, projede bağımlılıkları doğru yönetmek her şeyin düzenli ve uyumlu olmasını sağlar! 🌍🔥
