@@ -1,0 +1,9 @@
+Maven'de version, projeye eklediğimiz bağımlılığın hangi sürümünü kullanacağımızı belirler. 🔢 Eğer sabit bir sürüm (örn. 3.12.0) verirsek, her zaman o sürüm kullanılır. 📌 Ama LATEST veya RELEASE gibi ifadeler kullanırsak, Maven en güncel kararlı sürümü otomatik olarak getirir. 🚀 Sürüm seçimi önemli, çünkü yanlış bir sürüm kullanırsak uyumsuzluk veya hata yaşayabiliriz! ⚠️ Bu yüzden stabil ve proje gereksinimlerine uygun sürümleri tercih etmek her zaman en iyisidir. ✅
+
+Maven’de version numaraları Majör.Minör.Incremental-BuildNumber-Qualifier şeklinde beş parçadan oluşabilir. 🔢
+
+Majör sürüm (X.0.0) 👉 Büyük değişiklikler, geriye dönük uyumsuzluklar olabilir! ⚠️ Mesela 2.0.0'dan 3.0.0'a geçerken kodda ciddi değişiklik yapman gerekebilir. 🔄
+Minör sürüm (1.X.0) 👉 Yeni özellikler eklenir ama eski kod genelde çalışmaya devam eder. 🔧 Örneğin 1.2.0'dan 1.3.0'a geçerken projende ekstra fonksiyonlar kazanırsın. 🚀
+Incremental (Patch) sürüm (1.0.X) 👉 Küçük hata düzeltmeleri ve performans iyileştirmeleri içerir. 🛠️ Örneğin, 1.0.1 sadece birkaç hata giderildiği anlamına gelir, büyük bir değişiklik bekleme. 🩹
+Build Number (1.0.0-1234) 👉 CI/CD sistemleri tarafından oluşturulan sürüm numarasıdır. 🔄 Örneğin, 1.0.0-5678 şeklinde otomatik bir numara verilir, böylece her derleme benzersiz olur. 🔢
+Qualifier (1.0.0-BETA, 1.0.0-RELEASE) 👉 Sürümün hangi aşamada olduğunu gösterir. 🚦 Örneğin, 1.0.0-SNAPSHOT henüz geliştirme aşamasında, 1.0.0-RELEASE ise kararlı sürümdür! ✅

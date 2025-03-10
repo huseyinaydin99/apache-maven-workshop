@@ -1,0 +1,9 @@
+Maven Coordinates, bir Maven bağımlılığının kimliğini belirleyen özel bir adres gibi düşünülebilir. 📌 Bir bağımlılığın groupId, artifactId ve version bilgileri, Maven deposunda doğru paketi bulmamızı sağlar. 🔍 Örneğin, org.apache.commonscommons-lang33.12.0 dediğimizde, Apache Commons Lang kütüphanesinin belirli bir sürümünü projeye eklemiş oluyoruz. 📦 Böylece, projede ihtiyacımız olan bağımlılıkları düzgün şekilde yönetebilir ve her seferinde elle indirmekle uğraşmak zorunda kalmayız! 🚀
+groupId:
+Bir Maven bağımlılığının hangi organizasyona veya projeye ait olduğunu gösterir. 🏢 Örneğin, org.apache.commons dediğimizde, bunun Apache ekosistemine ait bir kütüphane olduğunu anlarız. 🔍
+
+artifactId:
+Eklenen bağımlılığın adını belirler, yani hangi paketi kullanacağımızı gösterir. 📦 Örneğin, commons-lang3 diyorsak, Apache'nin commons-lang3 kütüphanesini projemize dahil etmiş oluruz. 🚀
+
+version:
+Bağımlılığın hangi sürümünü kullanacağımızı belirler. 🔢 Örneğin, 3.12.0 dersek, bu kütüphanenin en güncel ve stabil sürümünü kullanmış oluruz. 🎯
