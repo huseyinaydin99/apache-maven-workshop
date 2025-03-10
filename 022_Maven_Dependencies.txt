@@ -3,3 +3,24 @@ Maven Dependency aslında bir projeye eklediğin bağımlılıklardır. 📦 Yan
 Transitive Dependency ise, bir bağımlılığın da bağımlılıkları olduğu durumdur! 🧩 Yani, sen direkt olarak bir kütüphaneyi projene dahil ettiğinde, o kütüphanenin başka bağımlılıkları varsa, o bağımlılıklar da otomatik olarak projene eklenir. 🚀 Bu sayede her şey otomatik ve sorunsuz çalışır.
 
 Son olarak, Dependency Management kısmı ise, tüm bağımlılıklarını düzenli ve uyumlu bir şekilde yönetmeni sağlar. 🛠️ POM dosyana eklediğin bağımlılıkların sürümleriyle ilgili çakışmalar varsa, bu yönetim hangi sürümün kullanılacağını belirler. 📊 Yani, projede bağımlılıkları doğru yönetmek her şeyin düzenli ve uyumlu olmasını sağlar! 🌍🔥
+
+Maven’de dependency mediation, farklı bağımlılıkların aynı sürümüne sahip olduğunda hangi sürümün kullanılacağını belirleme işidir. 🔄 Eğer aynı bağımlılığın birden fazla sürümü varsa, Maven bu sürümlerden en yüksek olanını seçer, böylece çakışmalar önlenir! 🚀
+
+Excluded dependencies ise, bir bağımlılığın içindeki belirli bağımlılıkları projenden hariç tutmana yarar. ❌ Yani, bir bağımlılığı eklerken, istemediğin bağımlılıkları dışarıda bırakabilirsin. 📦
+
+Optional dependencies ise, projende kullanmak isteyip istemediğine karar verebileceğin bağımlılıklardır. 🤔 Yani, bazı projelerde bu bağımlılıklara ihtiyacın olmayabilir, ama isteğe bağlı olarak ekleyebilirsin! 🔥
+
+Dependency scope ise, bağımlılığın ne zaman ve hangi koşullarda projede kullanılacağını tanımlar. 🏷️ Şimdi bu alanların ne olduğunu daha detaylı inceleyelim:
+
+Compile: Bu bağımlılık, derleme zamanında ve çalıştırma zamanında projende kullanılabilir. 🔧📦
+Provided: Bu bağımlılık, çalışma ortamında zaten mevcutsa (mesela bir web sunucusunda), projene dahil edilir ama senin elle yüklemene gerek yoktur. 🌐
+Runtime: Bu bağımlılık yalnızca uygulama çalıştığında kullanılır, derleme sırasında değil. 🏃‍♂️
+Test: Sadece testlerde kullanılan bağımlılıklardır. 🧪
+System: Bu bağımlılık, dışarıdan sisteme entegre edilmiştir ve proje dışında bir yerde bulunmaktadır. 💻
+Import: Bu scope, projene dış bir POM dosyasını dahil etmeni sağlar. 📂
+Maven ayrıca bazı faydalı dependency plugin komutları sunar:
+
+dependency:tree: Projendeki tüm bağımlılıkları bir ağaç yapısında gösterir, böylece hangi bağımlılığın nerede kullanıldığını kolayca görebilirsin. 🌳
+dependency:go-offline: Maven, projendeki tüm bağımlılıkları indirir ve offline çalışma için hazır hale getirir. 📡❌
+dependency:purge-local-repository: Lokal repository'ni temizler ve eski ya da gereksiz bağımlılıkları siler. 🧹
+dependency:sources: Bağımlılıkların kaynak kodlarını indirir, böylece daha fazla bilgi edinmek için kaynak koduna göz atabilirsin. 👨‍💻
