@@ -1,0 +1,44 @@
+Maven'de build süreci öyle rastgele değil, belli bir yaşam döngüsü (build lifecycle) çerçevesinde işliyor! 🔄🚀 Üç temel lifecycle var: default, clean ve site. 🏗️✨ Default lifecycle, kodun compile edilmesinden test edilmesine ve paketlenmesine kadar olan tüm adımları içeriyor. 🛠️📦 Clean lifecycle, eski build dosyalarını temizleyerek pırıl pırıl bir başlangıç yapmamızı sağlıyor. 🧹🔥 Site lifecycle ise projenin belgelerini ve raporlarını oluşturuyor, yani projenin vitrin kısmı! 📄🌍 Her lifecycle, içinde belirli fazlar (phases) barındırıyor ve her faz kendi görevini yerine getiriyor. ⚙️🔧 Mesela, validate, compile, test, package, install ve deploy gibi fazlar var ve her biri sırasıyla çalışıyor. ⏳✅ Yani Maven, bir projenin doğumundan deploy aşamasına kadar her şeyi düzenliyor! 📜🚀
+
+✅ Validate: Önce bi’ bakıyor, projenin düzgün olup olmadığına karar veriyor! 📋✅ Eğer eksik dosya, yanlış ayar falan varsa, daha yolun başında “Hop, olmadı bu!” diyor. 🚧❌
+
+💻 Compile: Java kodlarını alıp .class dosyalarına çeviriyor, yani beynimize kodları işliyor gibi düşünebilirsin! 🧠⚙️ Eğer hata varsa burada patlıyoruz, "compile error" yiyip dönüyoruz. 😅🚨
+
+🧪 Test: Yazdığımız testleri çalıştırıp “Bu kod gerçekten iş yapıyor mu?” diye kontrol ediyor. 🔍🔬 Eğer testler fail olursa, build süreci burada çakılıyor! 🚨⛔
+
+📦 Package: Proje tamam, artık JAR veya WAR dosyası olarak paketleyip kullanılabilir hale getiriyor! 📂📌 Kısacası, projeyi tek parça haline getirip “Al bunu, çalıştır!” diyor. 🚀🎁
+
+🔧 Install: Paketlediğimiz uygulamayı yerel repository'ye kaydediyor, yani bilgisayara "Bu bağımlılığı tanı!" diye bildiriyor. 🏠📦 Böylece başka projelerde de çağırıp kullanabiliyoruz. 🔄✅
+
+🌍 Deploy: İşin finali! Paketimizi uzaktaki bir sunucuya yüklüyor ve "Hadi bakalım, artık herkes bunu kullanabilir!" diyor. 🚀🌐 Eğer bir hata varsa, "Deployment failed!" diye moral bozuyor. 😭⚠️
+
+
+############
+
+Maven’in default lifecycle dediğimiz şey, projeyi sıfırdan alıp deploy edene kadar geçtiği tüm aşamaları kapsıyor! 🚀 Her şey adım adım ilerliyor, işleri sıraya koyuyor. Toplam 23 aşama var ama biz genelde en önemli olanları biliyoruz. 🎯
+
+💡 1. validate – "Projede eksik, hata var mı?" diye kontrol ediyor. 🔍✅
+🔠 2. initialize – Proje için bazı değişkenleri ayarlıyor, başlamadan önce ortamı hazırlıyor. 🔧🔄
+🛠 3. generate-sources – Kaynak kod oluşturma işlemlerini çalıştırıyor (örneğin, bazı eklentiler otomatik kod üretirse burada devreye giriyor). 🏗️📜
+✍ 4. process-sources – Kaynak kodu düzenleyip işlemeye başlıyor. 📂📝
+🗂 5. generate-resources – Kaynak dosyaları oluşturuyor (örneğin, config dosyalarını ayarlıyor). 🔄📦
+🛠 6. process-resources – Kaynakları işleyip, derleme öncesi hazırlık yapıyor. 🎨🛠️
+🚀 7. compile – Java kodlarını .class dosyalarına çeviriyor, yani beyni çalıştırıyor! 🧠💻
+🔬 8. process-classes – Derlenen sınıfları düzenliyor ve ek işlemler yapıyor. 🏗️🧐
+✅ 9. generate-test-sources – Testler için gerekli kodları oluşturuyor. 🔬📜
+📝 10. process-test-sources – Test kaynaklarını işliyor. 🔍📑
+🗂 11. generate-test-resources – Test ortamı için kaynak dosyaları oluşturuyor. 🔄🔬
+🛠 12. process-test-resources – Test kaynaklarını işler hale getiriyor. 🛠📁
+🚀 13. test-compile – Test sınıflarını derliyor. 🧪🔄
+🧪 14. process-test-classes – Test sınıflarını işler hale getiriyor. 📂🛠
+🛠 15. test – Testleri çalıştırıp, her şey yolunda mı diye bakıyor. ✅🔬
+📦 16. prepare-package – Paketleme öncesi son hazırlıkları yapıyor. 🎁📌
+🎁 17. package – Uygulamayı JAR/WAR olarak paketliyor! 📦🚀
+🔄 18. pre-integration-test – Entegrasyon testleri öncesi ortamı ayarlıyor. ⚙️🔍
+🧪 19. integration-test – Uygulamanın farklı bileşenlerinin uyumunu test ediyor. 🔄✅
+🛠 20. post-integration-test – Test sonrası temizlik ve analiz yapıyor. 🧼🔍
+🔧 21. verify – Her şey olması gerektiği gibi mi diye son kontrolleri yapıyor. 🔎✅
+📌 22. install – Paketi yerel repo'ya ekleyerek, diğer projelerde kullanılmasını sağlıyor. 📦🏠
+🌍 23. deploy – Projeyi uzak bir sunucuya göndererek herkesin kullanmasını sağlıyor! 🚀🌐
+
+Maven, bu adımları sırasıyla çalıştırıyor ve projenin tam anlamıyla hazır hale gelmesini sağlıyor. ⚙️🔥
