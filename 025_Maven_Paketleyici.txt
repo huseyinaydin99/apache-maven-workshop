@@ -1,0 +1,10 @@
+mvn -N io.takari:maven:wrapper
+Maven Wrapper (mvnw), projede sabit bir Maven sürümü kullanmayı sağlar ve herkesin aynı versiyonla çalışmasını garantiler. 🚀 mvn -N io.takari:maven:wrapper komutu, proje köküne mvnw, mvnw.cmd, maven-wrapper.jar gibi dosyaları ekleyerek, sistemde Maven yüklü olmasa bile projenin çalıştırılmasına olanak tanır. 💡 Bu sayede yeni geliştiriciler veya CI/CD süreçleri için ek kurulum gerektirmez, sadece ./mvnw package gibi komutlarla Maven işlemleri yürütülebilir. 🔄 Özellikle büyük ekiplerde ve farklı ortamlarla çalışan projelerde, sürüm uyumsuzluklarını önlemek için oldukça kullanışlıdır! 🎯
+
+./mvnw --version
+./mvnw --version komutu, Maven Wrapper üzerinden kullanılan Maven sürümünü ve sistem bilgilerini gösterir. 🔍 Normalde mvn --version komutuyla elde edilen çıktının aynısını verir, ancak burada mvn yerine mvnw kullanıldığı için projenin belirlediği spesifik Maven sürümünü gösterir. ⚙️ Eğer proje bir Maven Wrapper içeriyorsa, sistemde yüklü Maven sürümünden bağımsız olarak, proje için tanımlanan sürümün çalıştığını doğrulamak için bu komut kullanılır. ✅ Bu sayede herkesin aynı sürümle çalıştığından emin olunur ve CI/CD süreçlerinde sürüm tutarsızlıkları engellenir! 🚀
+
+mvn -N io.takari:maven:wrapper -Dmaven="3.6.3"
+mvn -N io.takari:maven:wrapper -Dmaven="3.6.3" komutu, projenize Maven Wrapper ekler ve 3.6.3 sürümünü kullanacak şekilde yapılandırır. 🚀 Bu komut, proje kök dizinine gerekli Wrapper dosyalarını ekler ve tüm geliştiricilerin aynı Maven sürümünü kullanmasını sağlar, böylece sürüm uyumsuzlukları önlenir. 💡 Bu sayede, sistemde Maven yüklü olsa da olmasa da, belirttiğiniz sürümle proje çalıştırılabilir. 🎯
+./mvnw --version
+
