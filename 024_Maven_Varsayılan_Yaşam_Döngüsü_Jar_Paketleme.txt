@@ -1,0 +1,78 @@
+Maven’in default lifecycle sürecinde JAR packaging nasıl çalışıyor, ona bi' dalalım! 🚀 Şimdi, yazdığımız Java projelerini tek bir JAR dosyası haline getirmek için Maven'in sunduğu package aşamasını kullanıyoruz. 📦 Bu aşamada, derlenmiş .class dosyaları, kaynak dosyalar ve bağımlılıklar bir araya getirilerek düzgünce paketleniyor. 🛠️
+
+JAR oluşturma süreci aslında validate → compile → test → package adımlarını içeriyor. Validate ile projenin düzgün olup olmadığına bakılıyor, compile aşamasında Java kodlarımız derleniyor, test ile unit testler çalıştırılıyor ve her şey yolundaysa package aşamasına geçiliyor. Bu noktada target/ klasörü içinde proje-adı.jar şeklinde bir dosya oluşturuluyor. 💾
+
+Şimdi, eğer bağımlılıkları içinde barındıran bir fat JAR (über JAR) oluşturmak istiyorsak, maven-assembly-plugin veya maven-shade-plugin kullanmamız gerekiyor. 🎒 Normalde, Maven bağımlılıkları direkt JAR içine koymaz, ama bu eklentilerle bağımlılıkları dahil ederek bağımsız çalışabilen bir JAR elde edebiliriz. 🔥
+
+Maven’de JAR paketleme işlemi şu komutla gerçekleşiyor:
+
+mvn clean package
+Bu komut önce eski build kalıntılarını temizliyor, sonra derleyip testleri çalıştırıyor ve en sonunda JAR dosyamızı oluşturuyor. ✨
+
+Eğer bağımlılıkları içeren fat JAR istiyorsak, şu komutu kullanabiliriz:
+
+mvn package -P assembly
+
+
+Ya da shade plugin kullanıyorsak:
+📌 pom.xml İçin Shade Plugin Yapılandırması
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.4.1</version>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+
+
+mvn clean package shade:shade
+Böylece bağımlılıklarla birlikte çalışan tek dosya halinde bir JAR elde etmiş oluyoruz. 🏗️
+
+🔥 Kullanımı
+Bu yapılandırmayı ekledikten sonra aşağıdaki komutla bağımlılıkları içeren fat JAR oluşturabilirsin:
+mvn clean package
+Oluşan JAR dosyası target/ klasörü içinde yer alacak ve içindeki bağımlılıklarla birlikte çalıştırılabilir olacak.
+🛠 Alternatif: Çıktı JAR Adını Özelleştirme
+Varsayılan olarak oluşturulan JAR ismi proje-adı-jar-with-dependencies.jar olur. Eğer özelleştirmek istersen:
+<configuration>
+    <shadedArtifactAttached>true</shadedArtifactAttached>
+    <shadedClassifierName>fat-sisko</shadedClassifierName>
+</configuration>
+Bu durumda JAR ismi: proje-adı-fat-sisko.jar
+Komut değişmez, hâlâ mvn clean package ile çalıştırabilirsin. 🚀
+
+Sonuç olarak, Maven’in JAR packaging süreci yazdığımız kodları çalıştırılabilir hale getirip dağıtmayı sağlıyor. Projemizi kolayca başkalarıyla paylaşabilir, bağımlılıklarıyla birlikte veya bağımsız olarak çalıştırabiliriz. 🎯 Maven sağ olsun, eskiden elle yaptığımız işleri artık tek komutla hallediyoruz! 🚀
+
+###########################
+
+Maven'in Default Site Build Lifecycle'ı, projenin belgelerini oluşturmak, raporları üretmek ve site olarak yayınlamak için kullanılan bir süreçtir. 📄✨ Normal build sürecinden farklı olarak, burada kodu derlemek veya paketlemek yerine, projenin dökümantasyonunu oluşturup düzenleriz. Bu lifecycle, projeye dair önemli bilgileri derleyerek, okunaklı ve paylaşılabilir bir site formatına dönüştürmemizi sağlar.
+
+🛠 Maven Default Site Lifecycle Aşamaları
+1️⃣ pre-site – Site için hazırlık aşaması, gerekli ayarları yapar. 🏗
+2️⃣ site – Projenin dökümantasyonunu oluşturur. 📜
+3️⃣ post-site – Site oluşturma sonrası ek işlemler yapılır. 🛠
+4️⃣ site-deploy – Oluşturulan siteyi belirlenen hedefe yükler. 🚀
+
+Özetle, eğer projen için bir site oluşturmak istiyorsan, bu lifecycle tam sana göre! 🔥 Siteyi oluşturmak için şu komutu çalıştırabilirsin:
+
+mvn site
+Bu komut çalıştırıldığında, projenin kök dizininde target/site klasörü oluşur ve HTML formatında bir site üretilir. Eğer bu siteyi bir sunucuya yüklemek istersen:
+
+mvn site-deploy
+Bu sayede, dökümantasyonunu herkesle paylaşabileceğin bir platforma yüklemiş olursun. 🌍✨
+
+🎯 Nerelerde Kullanılır?
+Proje hakkında otomatik raporlar oluşturmak 📊
+Javadoc dokümantasyonu eklemek 📚
+Bağımlılık bilgileri, test raporları ve lisans bilgilerini düzenlemek 📑
+Kısacası, Maven Default Site Lifecycle bir projeyi sadece kod olarak değil, belgeleriyle birlikte yönetmek isteyenler için oldukça faydalı! 💡
